@@ -2,7 +2,16 @@
   "images" : [
     {
       "filename" : "Сэмюэл Л. Джексон.jpeg",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
