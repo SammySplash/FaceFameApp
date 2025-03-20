@@ -9,8 +9,7 @@ import UIKit
 
 final class QuizViewController: UIViewController {
     
-    var currentQuestion: Question?
-    var question: Question!
+    var questions = Question.getQuestion(count: 5)
     
     @IBOutlet var ActorImageView: UIImageView!
     @IBOutlet var AnswerButton: UIButton!
@@ -43,27 +42,32 @@ final class QuizViewController: UIViewController {
     
     @IBAction func selectedAnswer(_ sender: UIButton) {
         
-        guard let selectedAnswer = sender.titleLabel?.text,
-              let question = currentQuestion else { return }
-        
-        if selectedAnswer == question.correctActor {
-            showAlert(message: "Правильно!")
-        } else {
-            showAlert(message: "Неправильно! Это был \(question.correctActor).")
-        }
+        //        guard let selectedAnswer = sender.titleLabel?.text,
+        //              let question = currentQuestion else { return }
+        //
+        //        if selectedAnswer == question.correctActor {
+        //            showAlert(message: "Правильно!")
+        //        } else {
+        //            showAlert(message: "Неправильно! Это был \(question.correctActor).")
+        //        }
     }
     
     @IBAction func hintButtonTapped() {
-
+        
         //guard let question = currentQuestion else { return }
-        showAlert(message: question.hint)
+        showAlert(withTitle: "Whoops", andMessage: question.hint)
     }
     
-    func showAlert(message: String) {
-        let alert = UIAlertController(title: "Подсказка", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+    private func showAlert(withTitle title: String, andMessage message: String, handler: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) {_ in
+            handler?()
+        }
+        alert.addAction(okAction)
         present(alert, animated: true)
     }
+    
+    
 }
 
 

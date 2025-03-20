@@ -8,6 +8,9 @@
 import Foundation
 
 struct DataStore {
+    
+    let share = DataStore()
+    
     static let maleActors = [
         "Аль Пачино": "Знаменит за роль в 'Крестном отце' и получил 'Оскар' за 'Запах женщины'",
         "Джонни Депп": "Стал мировым символом благодаря роли Джэка Воробья в 'Пиратах Карибского моря'",
@@ -123,4 +126,7 @@ struct DataStore {
         }
         return nil
     }
+    
+    private init () {}
+    
 }

@@ -6,22 +6,44 @@
 //
 
 import Foundation
+import UIKit
 
 struct Question {
-    var correctActor: String
-    var hint: String
-    var options: [String]
-    var imageName: String?
+    let imageActor: UIImage
+    let currectAnswer: String
+    let answers: [String]
+    let help: String
     
-    static func generate(from dataStore: [String: String]) -> Question? {
-        let allActors = Array(dataStore.keys)
-        guard let randomActor = allActors.randomElement() else { return nil }
-        
-        let hint = dataStore[randomActor] ?? "Подсказка отсутствует"
-        let wrongActors = allActors.filter { $0 != randomActor }.shuffled().prefix(3)
-        let options = ([randomActor] + wrongActors).shuffled()
-        let imageName = DataStore.image(for: randomActor)
-        
-        return Question(correctActor: randomActor, hint: hint, options: options, imageName: imageName)
-    }
+    static func getQuestion(count: Int) -> [Question] {
+        var questions: [Question] = []
+        let keys = Array(DataStore.maleActors.keys)
+        let values = Array(DataStore.maleActors.values)
+           
+           for i in 0..<min(count, keys.count) {
+               let actor = keys[i]
+               let image = UIImage(named: actor)!  // убрать !!!!!
+               let help = "Играет в фильме '\(values[i])'"
+               var wrongAnswers: [String] = []
+               
+               for _ in 0..<3 {
+                   if let randomKey = keys.randomElement(),
+                      !wrongAnswers.contains(randomKey) && randomKey != actor {
+                       wrongAnswers.append(randomKey)
+                   }
+               }
+               wrongAnswers.append(actor)
+               wrongAnswers.shuffle()
+
+               let question = Question(
+                imageActor: image,
+                currectAnswer: actor,
+                answers: wrongAnswers,
+                help: help
+               )
+               questions.append(question)
+           }
+           return questions
+       }
+
 }
+
