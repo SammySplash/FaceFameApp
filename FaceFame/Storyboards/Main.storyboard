@@ -32,30 +32,38 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         <connections>
-                                            <action selector="answerSelected:" destination="O7z-y0-umc" eventType="touchUpInside" id="kjZ-ud-r6z"/>
-                                            <action selector="selectedAnswer:" destination="O7z-y0-umc" eventType="touchUpInside" id="Qm9-ko-GrS"/>
+                                            <action selector="answerButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AwS-Kb-13v"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ye2-oe-Gly" userLabel="button1">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ye2-oe-Gly" userLabel="button1">
                                         <rect key="frame" x="0.0" y="70" width="353" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="answerButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="J94-vk-eY2"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoF-VT-wox" userLabel="button2">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoF-VT-wox" userLabel="button2">
                                         <rect key="frame" x="0.0" y="140" width="353" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="answerButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wsU-wH-JyN"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3x-tJ-AwT" userLabel="button3">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3x-tJ-AwT" userLabel="button3">
                                         <rect key="frame" x="0.0" y="210" width="353" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="answerButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="b4I-9n-Ocj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -67,10 +75,10 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="questionmark.app" catalog="system"/>
                                 <connections>
-                                    <action selector="hintButtonTapped" destination="Y6W-OH-hqX" eventType="touchUpInside" id="PbA-Vp-Nec"/>
+                                    <action selector="helpButtonAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Iqr-mS-xJx"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8JW-uM-W7k">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8JW-uM-W7k" userLabel="Image View Actor">
                                 <rect key="frame" x="16" y="169" width="361" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="AgV-pk-J5F"/>
@@ -96,13 +104,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="Вопрос №" id="eIe-lS-4Ev"/>
                     <connections>
-                        <outlet property="ActorImageView" destination="8JW-uM-W7k" id="0J0-0d-gs6"/>
-                        <outlet property="AnswerButton" destination="TZ1-eM-ii6" id="dLe-QF-vbR"/>
+                        <outlet property="ActorImageView" destination="8JW-uM-W7k" id="NO6-Bj-uYi"/>
+                        <outletCollection property="answerButtons" destination="TZ1-eM-ii6" collectionClass="NSMutableArray" id="Yg0-XM-U87"/>
+                        <outletCollection property="answerButtons" destination="Ye2-oe-Gly" collectionClass="NSMutableArray" id="b8b-KH-aPs"/>
+                        <outletCollection property="answerButtons" destination="ZoF-VT-wox" collectionClass="NSMutableArray" id="uHn-Yf-wpn"/>
+                        <outletCollection property="answerButtons" destination="O3x-tJ-AwT" collectionClass="NSMutableArray" id="WOG-kQ-R1G"/>
                         <segue destination="nmk-pY-81M" kind="show" identifier="showResult" id="n2O-Rc-Ils"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="O7z-y0-umc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="904.58015267175574" y="-27.464788732394368"/>
         </scene>

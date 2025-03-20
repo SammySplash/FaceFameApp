@@ -18,32 +18,32 @@ struct Question {
         var questions: [Question] = []
         let keys = Array(DataStore.maleActors.keys)
         let values = Array(DataStore.maleActors.values)
-           
-           for i in 0..<min(count, keys.count) {
-               let actor = keys[i]
-               let image = UIImage(named: actor)!  // убрать !!!!!
-               let help = "Играет в фильме '\(values[i])'"
-               var wrongAnswers: [String] = []
-               
-               for _ in 0..<3 {
-                   if let randomKey = keys.randomElement(),
-                      !wrongAnswers.contains(randomKey) && randomKey != actor {
-                       wrongAnswers.append(randomKey)
-                   }
-               }
-               wrongAnswers.append(actor)
-               wrongAnswers.shuffle()
-
-               let question = Question(
+        
+        for i in 0..<count {
+            let actor = keys[i]
+            let image = UIImage(named: actor) ?? UIImage()
+            let help = "Играет в фильме '\(values[i])'"
+            var wrongAnswers: [String] = []
+            
+            for _ in 0..<3 {
+                if let randomKey = keys.randomElement(),
+                   !wrongAnswers.contains(randomKey) && randomKey != actor {
+                    wrongAnswers.append(randomKey)
+                }
+            }
+            wrongAnswers.append(actor)
+            wrongAnswers.shuffle()
+            
+            let question = Question(
                 imageActor: image,
                 currectAnswer: actor,
                 answers: wrongAnswers,
                 help: help
-               )
-               questions.append(question)
-           }
-           return questions
-       }
-
+            )
+            questions.append(question)
+        }
+        return questions
+    }
+    
 }
 

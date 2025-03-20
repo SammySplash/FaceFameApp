@@ -9,7 +9,7 @@ import Foundation
 
 struct DataStore {
     
-    let share = DataStore()
+    static let shared = DataStore()
     
     static let maleActors = [
         "Аль Пачино": "Знаменит за роль в 'Крестном отце' и получил 'Оскар' за 'Запах женщины'",
