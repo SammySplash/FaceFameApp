@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Деми Мур.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
