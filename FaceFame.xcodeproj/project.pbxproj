@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EFB46E42D8C1CD70082C3C1 /* Actors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB46E32D8C1CD70082C3C1 /* Actors.swift */; };
+		0EFB46E62D8C1D0B0082C3C1 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB46E52D8C1D0B0082C3C1 /* DataStore.swift */; };
 		44FCC01E2D8ACF0B0047BE76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCC0142D8ACF0B0047BE76 /* AppDelegate.swift */; };
 		44FCC01F2D8ACF0B0047BE76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCC01B2D8ACF0B0047BE76 /* SceneDelegate.swift */; };
-		44FCC0202D8ACF0B0047BE76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCC01C2D8ACF0B0047BE76 /* ViewController.swift */; };
+		44FCC0202D8ACF0B0047BE76 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCC01C2D8ACF0B0047BE76 /* QuizViewController.swift */; };
 		44FCC0212D8ACF0B0047BE76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44FCC0152D8ACF0B0047BE76 /* Assets.xcassets */; };
 		44FCC0232D8ACF0B0047BE76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FCC0182D8ACF0B0047BE76 /* LaunchScreen.storyboard */; };
-		44FCC0242D8ACF0B0047BE76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FCC01A2D8ACF0B0047BE76 /* Main.storyboard */; };
+		44FCC0242D8ACF0B0047BE76 /* LastMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FCC01A2D8ACF0B0047BE76 /* LastMain.storyboard */; };
+		FFF385CF2D8B476F00F9A159 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFF385CE2D8B476F00F9A159 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EFB46E32D8C1CD70082C3C1 /* Actors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Actors.swift; path = FaceFame/Actors.swift; sourceTree = SOURCE_ROOT; };
+		0EFB46E52D8C1D0B0082C3C1 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		44FCBFFC2D8AC81E0047BE76 /* FaceFame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceFame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FCC0142D8ACF0B0047BE76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44FCC0152D8ACF0B0047BE76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44FCC0162D8ACF0B0047BE76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44FCC0172D8ACF0B0047BE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		44FCC0192D8ACF0B0047BE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		44FCC0192D8ACF0B0047BE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LastMain.storyboard; sourceTree = "<group>"; };
 		44FCC01B2D8ACF0B0047BE76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		44FCC01C2D8ACF0B0047BE76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		44FCC01C2D8ACF0B0047BE76 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		FFF385CE2D8B476F00F9A159 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,7 @@
 				44FCC0262D8ACF250047BE76 /* Storyboards */,
 				44FCC0282D8ACF4D0047BE76 /* App */,
 				44FCC0272D8ACF400047BE76 /* Resourses */,
+				0EFB46E52D8C1D0B0082C3C1 /* DataStore.swift */,
 			);
 			path = FaceFame;
 			sourceTree = "<group>";
@@ -68,7 +75,7 @@
 		44FCC0252D8ACF130047BE76 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				44FCC01C2D8ACF0B0047BE76 /* ViewController.swift */,
+				44FCC01C2D8ACF0B0047BE76 /* QuizViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -76,8 +83,9 @@
 		44FCC0262D8ACF250047BE76 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				44FCC01A2D8ACF0B0047BE76 /* Main.storyboard */,
+				44FCC01A2D8ACF0B0047BE76 /* LastMain.storyboard */,
 				44FCC0182D8ACF0B0047BE76 /* LaunchScreen.storyboard */,
+				FFF385CE2D8B476F00F9A159 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -103,6 +111,7 @@
 		44FCC0292D8ACF5B0047BE76 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0EFB46E32D8C1CD70082C3C1 /* Actors.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,7 +179,8 @@
 			files = (
 				44FCC0212D8ACF0B0047BE76 /* Assets.xcassets in Resources */,
 				44FCC0232D8ACF0B0047BE76 /* LaunchScreen.storyboard in Resources */,
-				44FCC0242D8ACF0B0047BE76 /* Main.storyboard in Resources */,
+				FFF385CF2D8B476F00F9A159 /* Main.storyboard in Resources */,
+				44FCC0242D8ACF0B0047BE76 /* LastMain.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +193,9 @@
 			files = (
 				44FCC01E2D8ACF0B0047BE76 /* AppDelegate.swift in Sources */,
 				44FCC01F2D8ACF0B0047BE76 /* SceneDelegate.swift in Sources */,
-				44FCC0202D8ACF0B0047BE76 /* ViewController.swift in Sources */,
+				44FCC0202D8ACF0B0047BE76 /* QuizViewController.swift in Sources */,
+				0EFB46E62D8C1D0B0082C3C1 /* DataStore.swift in Sources */,
+				0EFB46E42D8C1CD70082C3C1 /* Actors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,12 +210,12 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		44FCC01A2D8ACF0B0047BE76 /* Main.storyboard */ = {
+		44FCC01A2D8ACF0B0047BE76 /* LastMain.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				44FCC0192D8ACF0B0047BE76 /* Base */,
 			);
-			name = Main.storyboard;
+			name = LastMain.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -224,6 +236,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -256,6 +269,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

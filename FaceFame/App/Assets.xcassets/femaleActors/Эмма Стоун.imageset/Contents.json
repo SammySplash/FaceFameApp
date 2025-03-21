@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Эмма Стоун.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
