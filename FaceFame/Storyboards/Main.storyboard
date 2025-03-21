@@ -2,13 +2,14 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DKo-Xk-QVd">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Вопрос №-->
+        <!--Quiz View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="QuizViewController" customModule="FaceFame" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,15 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1HG-f6-Xlw">
-                                <rect key="frame" x="16" y="155" width="361" height="4"/>
-                            </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MjZ-rg-Dab">
                                 <rect key="frame" x="20" y="528" width="353" height="260"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ1-eM-ii6">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="LWw-OL-cds"/>
                                         </constraints>
@@ -37,7 +34,6 @@
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ye2-oe-Gly" userLabel="button1">
                                         <rect key="frame" x="0.0" y="70" width="353" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -47,7 +43,6 @@
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoF-VT-wox" userLabel="button2">
                                         <rect key="frame" x="0.0" y="140" width="353" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -57,7 +52,6 @@
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3x-tJ-AwT" userLabel="button3">
                                         <rect key="frame" x="0.0" y="210" width="353" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -68,10 +62,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIn-Nd-gYF" userLabel="Button help">
-                                <rect key="frame" x="324" y="439" width="49" height="35"/>
+                                <rect key="frame" x="324" y="426" width="49" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="j0U-1R-09v"/>
                                 </constraints>
+                                <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="questionmark.app" catalog="system"/>
                                 <connections>
@@ -79,32 +74,42 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8JW-uM-W7k" userLabel="Image View Actor">
-                                <rect key="frame" x="16" y="169" width="361" height="250"/>
+                                <rect key="frame" x="16" y="133" width="361" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="AgV-pk-J5F"/>
                                 </constraints>
                             </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1HG-f6-Xlw">
+                                <rect key="frame" x="16" y="393" width="361" height="8"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="HAH-h8-3pe"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="7" id="aAh-Qo-nc7"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8JW-uM-W7k" secondAttribute="trailing" constant="16" id="1PY-eb-y42"/>
-                            <constraint firstItem="8JW-uM-W7k" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="5cl-mQ-MPa"/>
-                            <constraint firstItem="1HG-f6-Xlw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="640-dd-DFJ"/>
+                            <constraint firstItem="TIn-Nd-gYF" firstAttribute="top" secondItem="1HG-f6-Xlw" secondAttribute="bottom" constant="25" id="3qW-rz-ts6"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TIn-Nd-gYF" secondAttribute="trailing" constant="20" id="9ft-2A-5bc"/>
-                            <constraint firstItem="1HG-f6-Xlw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="F7W-6a-poe"/>
+                            <constraint firstItem="8JW-uM-W7k" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="AYf-37-0sm"/>
                             <constraint firstItem="MjZ-rg-Dab" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Kf8-b0-mGG"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1HG-f6-Xlw" secondAttribute="trailing" constant="16" id="TD1-CF-ZC4"/>
-                            <constraint firstItem="8JW-uM-W7k" firstAttribute="top" secondItem="1HG-f6-Xlw" secondAttribute="bottom" constant="10" id="Toj-KT-PJM"/>
+                            <constraint firstItem="8JW-uM-W7k" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="NlI-Se-6Xc"/>
+                            <constraint firstItem="1HG-f6-Xlw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Slp-fg-LaE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MjZ-rg-Dab" secondAttribute="trailing" constant="20" id="Wxw-oR-vHM"/>
-                            <constraint firstItem="TIn-Nd-gYF" firstAttribute="top" secondItem="8JW-uM-W7k" secondAttribute="bottom" constant="20" id="ZFA-Po-8d5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="MjZ-rg-Dab" secondAttribute="bottom" constant="30" id="hGB-nh-8Qt"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1HG-f6-Xlw" secondAttribute="trailing" constant="16" id="iW0-WK-Ra5"/>
+                            <constraint firstItem="1HG-f6-Xlw" firstAttribute="top" secondItem="8JW-uM-W7k" secondAttribute="bottom" constant="10" id="med-lC-XJi"/>
                             <constraint firstItem="1HG-f6-Xlw" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="rF6-Av-J2t"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос №" id="eIe-lS-4Ev"/>
+                    <navigationItem key="navigationItem" id="eIe-lS-4Ev"/>
                     <connections>
                         <outlet property="ActorImageView" destination="8JW-uM-W7k" id="NO6-Bj-uYi"/>
+                        <outlet property="progressBarView" destination="1HG-f6-Xlw" id="8qv-7k-pig"/>
                         <outletCollection property="answerButtons" destination="TZ1-eM-ii6" collectionClass="NSMutableArray" id="Yg0-XM-U87"/>
                         <outletCollection property="answerButtons" destination="Ye2-oe-Gly" collectionClass="NSMutableArray" id="b8b-KH-aPs"/>
                         <outletCollection property="answerButtons" destination="ZoF-VT-wox" collectionClass="NSMutableArray" id="uHn-Yf-wpn"/>
@@ -116,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="904.58015267175574" y="-27.464788732394368"/>
         </scene>
-        <!--View Controller-->
+        <!--Quiz Resutls View Controller-->
         <scene sceneID="lE8-7t-vwG">
             <objects>
-                <viewController id="nmk-pY-81M" sceneMemberID="viewController">
+                <viewController id="nmk-pY-81M" customClass="QuizResutlsViewController" customModule="FaceFame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CDy-wL-MHY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,13 +186,13 @@
             </objects>
             <point key="canvasLocation" x="2518" y="-100"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Quiz Navigation Controller-->
         <scene sceneID="xzO-fG-een">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DKo-Xk-QVd" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DKo-Xk-QVd" customClass="QuizNavigationController" customModule="FaceFame" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="1SU-47-6b3">
-                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1SU-47-6b3">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -202,11 +207,20 @@
     </scenes>
     <resources>
         <image name="questionmark.app" catalog="system" width="128" height="114"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -16,6 +16,8 @@
 		44FCC0232D8ACF0B0047BE76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FCC0182D8ACF0B0047BE76 /* LaunchScreen.storyboard */; };
 		44FCC0242D8ACF0B0047BE76 /* LastMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FCC01A2D8ACF0B0047BE76 /* LastMain.storyboard */; };
 		FFF385CF2D8B476F00F9A159 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFF385CE2D8B476F00F9A159 /* Main.storyboard */; };
+		FFF385F52D8DBBA000F9A159 /* QuizNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF385F42D8DBBA000F9A159 /* QuizNavigationController.swift */; };
+		FFF385F72D8DC33900F9A159 /* QuizResutlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF385F62D8DC33900F9A159 /* QuizResutlsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +32,17 @@
 		44FCC01B2D8ACF0B0047BE76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		44FCC01C2D8ACF0B0047BE76 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		FFF385CE2D8B476F00F9A159 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FFF385F42D8DBBA000F9A159 /* QuizNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizNavigationController.swift; sourceTree = "<group>"; };
+		FFF385F62D8DC33900F9A159 /* QuizResutlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResutlsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FFF385EF2D8DA90100F9A159 /* Extensions */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		44FCBFF92D8AC81E0047BE76 /* Frameworks */ = {
@@ -62,6 +74,7 @@
 		44FCC01D2D8ACF0B0047BE76 /* FaceFame */ = {
 			isa = PBXGroup;
 			children = (
+				FFF385EF2D8DA90100F9A159 /* Extensions */,
 				44FCC0252D8ACF130047BE76 /* ViewControllers */,
 				44FCC0292D8ACF5B0047BE76 /* Models */,
 				44FCC0262D8ACF250047BE76 /* Storyboards */,
@@ -76,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				44FCC01C2D8ACF0B0047BE76 /* QuizViewController.swift */,
+				FFF385F42D8DBBA000F9A159 /* QuizNavigationController.swift */,
+				FFF385F62D8DC33900F9A159 /* QuizResutlsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -130,6 +145,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FFF385EF2D8DA90100F9A159 /* Extensions */,
 			);
 			name = FaceFame;
 			packageProductDependencies = (
@@ -194,7 +212,9 @@
 				44FCC01E2D8ACF0B0047BE76 /* AppDelegate.swift in Sources */,
 				44FCC01F2D8ACF0B0047BE76 /* SceneDelegate.swift in Sources */,
 				44FCC0202D8ACF0B0047BE76 /* QuizViewController.swift in Sources */,
+				FFF385F72D8DC33900F9A159 /* QuizResutlsViewController.swift in Sources */,
 				0EFB46E62D8C1D0B0082C3C1 /* DataStore.swift in Sources */,
+				FFF385F52D8DBBA000F9A159 /* QuizNavigationController.swift in Sources */,
 				0EFB46E42D8C1CD70082C3C1 /* Actors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,7 +256,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -269,7 +289,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
