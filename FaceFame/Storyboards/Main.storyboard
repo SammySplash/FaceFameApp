@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yYG-Ho-VpE">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -23,27 +23,46 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <segue destination="Az5-Xl-0R5" kind="showDetail" id="5OB-t6-Jem"/>
+                                    <segue destination="Az5-Xl-0R5" kind="show" id="x0H-Lf-cdK"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9K0-d1-ArJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-55"/>
+            <point key="canvasLocation" x="1057.2519083969464" y="-55.633802816901408"/>
         </scene>
-        <!--Quiz-->
+        <!--Quiz1-->
         <scene sceneID="Qkm-Wd-osW">
             <objects>
-                <viewControllerPlaceholder storyboardName="Quiz" id="Az5-Xl-0R5" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Quiz" referencedIdentifier="Quiz1" id="Az5-Xl-0R5" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="5mG-nX-98E"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4I-dt-gQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791" y="-90"/>
+            <point key="canvasLocation" x="1717.5572519083969" y="-90.140845070422543"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5EY-fg-Nul">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yYG-Ho-VpE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cNm-NH-Ya9">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="w88-au-Taz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gS0-sN-Moa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-55.633802816901408"/>
         </scene>
     </scenes>
     <resources>

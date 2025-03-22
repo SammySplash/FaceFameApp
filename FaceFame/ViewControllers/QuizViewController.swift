@@ -25,6 +25,8 @@ final class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.hidesBackButton = true
+        
             let titleLabel = UILabel()
             titleLabel.text = "FaceFame"
             titleLabel.textAlignment = .center
