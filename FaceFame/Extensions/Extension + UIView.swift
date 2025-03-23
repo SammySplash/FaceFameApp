@@ -33,5 +33,29 @@ extension UIView {
         gradient.endPoint = CGPoint(x: 0, y: 1)
         layer.insertSublayer(gradient, at: 0)
     }
-    
+}
+
+// MARK: - Set animations
+extension UIView {
+    func shake() {
+         let animation = CABasicAnimation(keyPath: "position")
+         animation.duration = 0.07
+         animation.repeatCount = 4
+         animation.autoreverses = true
+         animation.fromValue = CGPoint(x: self.center.x - 10, y: self.center.y)
+         animation.toValue = CGPoint(x: self.center.x + 10, y: self.center.y)
+
+         self.layer.add(animation, forKey: "position")
+     }
+}
+
+// MARK: - Set elements view
+extension UIView {
+    func setButton(_ button: UIButton) {
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderWidth = 2
+        button.layer.cornerRadius = button.frame.height / 2
+        button.backgroundColor = nil
+        button.setTitleColor(.white, for: .normal)
+    }
 }

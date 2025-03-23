@@ -42,19 +42,15 @@ final class QuizViewController: UIViewController {
         
         updateUI()
         view.addVerticalGradientLayer()
+        answerButtons.forEach{ view.setButton($0) }
         
         questions.forEach{
             print($0.currectAnswer)
         }
-            answerButtons.forEach{ button in
-                button.layer.borderColor = UIColor.white.cgColor
-                button.layer.borderWidth = 2
-                button.layer.cornerRadius = button.frame.height / 2
-            }
+        
         
         ActorImageView.layer.cornerRadius = ActorImageView.frame.height / 5
     }
-    
     private func showAlert(withTitle title: String, andMessage message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default)
@@ -64,7 +60,8 @@ final class QuizViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let resultVC = segue.destination as? QuizResutlsViewController {
-            // что-то передадим
+            resultVC.currentAnswers = currectAnswersCount
+            resultVC.totalAnswers = questions.count
         }
     }
     
@@ -107,6 +104,7 @@ final class QuizViewController: UIViewController {
             
             UIView.animate(withDuration: 0.3, animations: {
                 sender.backgroundColor = .red
+                sender.shake()
             }) { _ in
                 UIView.animate(withDuration: 0.3, animations: {
                     sender.backgroundColor = .clear
