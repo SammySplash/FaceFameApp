@@ -21,8 +21,8 @@ struct Question {
         
         for i in 0..<count {
             let actor = keys[i]
-            let image = UIImage(named: actor) ?? UIImage()
-            let help = "Играет в фильме '\(values[i])'"
+            let image = UIImage(named: actor) ?? UIImage(named: "default")!
+            let help = values[i]
             var wrongAnswers: [String] = []
             
             for _ in 0..<3 {

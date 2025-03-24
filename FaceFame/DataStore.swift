@@ -120,13 +120,4 @@ struct DataStore {
         "Джоди Тёрнер-Смит": "Исполнила роль в 'Соль земли' и сыграла в 'Куче афиши'"
     ]
     
-    static func image(for actor: String) -> String? {
-        if maleActors.keys.contains(actor) || femaleActors.keys.contains(actor) {
-            return actor.replacingOccurrences(of: " ", with: "_")
-        }
-        return nil
-    }
-    
-    private init () {}
-    
 }
