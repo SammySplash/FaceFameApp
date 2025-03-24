@@ -16,8 +16,8 @@ struct Question {
     
     static func getQuestion(count: Int) -> [Question] {
         var questions: [Question] = []
-        let keys = Array(DataStore.femaleActors.keys)
-        let values = Array(DataStore.femaleActors.values)
+        let keys = Array(DataStore.maleActors.keys)
+        let values = Array(DataStore.maleActors.values)
         
         for i in 0..<count {
             let actor = keys[i]
