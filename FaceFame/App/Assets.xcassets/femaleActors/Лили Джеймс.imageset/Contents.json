@@ -1,8 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Лили Джеймс.jpg",
-      "idiom" : "universal"
+      "filename" : "Лили Джеймс.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

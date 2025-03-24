@@ -1,8 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Мег Райан.jpg",
-      "idiom" : "universal"
+      "filename" : "Мег Райан.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
