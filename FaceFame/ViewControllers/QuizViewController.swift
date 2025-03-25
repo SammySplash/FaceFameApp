@@ -15,6 +15,7 @@ final class QuizViewController: UIViewController {
     @IBOutlet private var ActorImageView: UIImageView!
     @IBOutlet private var answerButtons: [UIButton]!
     @IBOutlet private var progressBarView: UIProgressView!
+    @IBOutlet private var helpButtonOutlet: UIButton!
     
     //MARK: - Public properties
     var currectAnswersCount = 0
@@ -43,6 +44,7 @@ final class QuizViewController: UIViewController {
         updateUI()
         view.addVerticalGradientLayer()
         answerButtons.forEach{ view.setButton($0) }
+        view.setButton(helpButtonOutlet)
         
         questions.forEach{
             print($0.currectAnswer)

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -62,13 +63,16 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIn-Nd-gYF" userLabel="Button help">
-                                <rect key="frame" x="324" y="382" width="49" height="35"/>
+                                <rect key="frame" x="121.66666666666669" y="382" width="150" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="j0U-1R-09v"/>
+                                    <constraint firstAttribute="width" constant="150" id="wgK-k2-Dmf"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="questionmark.app" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" title="подсказка">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="helpButtonAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Iqr-mS-xJx"/>
                                 </connections>
@@ -94,10 +98,10 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8JW-uM-W7k" secondAttribute="trailing" constant="16" id="1PY-eb-y42"/>
                             <constraint firstItem="TIn-Nd-gYF" firstAttribute="top" secondItem="1HG-f6-Xlw" secondAttribute="bottom" constant="25" id="3qW-rz-ts6"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TIn-Nd-gYF" secondAttribute="trailing" constant="20" id="9ft-2A-5bc"/>
                             <constraint firstItem="8JW-uM-W7k" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="AYf-37-0sm"/>
                             <constraint firstItem="MjZ-rg-Dab" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Kf8-b0-mGG"/>
                             <constraint firstItem="8JW-uM-W7k" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="NlI-Se-6Xc"/>
+                            <constraint firstItem="TIn-Nd-gYF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Pm6-pB-XAO"/>
                             <constraint firstItem="1HG-f6-Xlw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Slp-fg-LaE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MjZ-rg-Dab" secondAttribute="trailing" constant="20" id="Wxw-oR-vHM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="MjZ-rg-Dab" secondAttribute="bottom" constant="30" id="hGB-nh-8Qt"/>
@@ -109,6 +113,7 @@
                     <navigationItem key="navigationItem" id="eIe-lS-4Ev"/>
                     <connections>
                         <outlet property="ActorImageView" destination="8JW-uM-W7k" id="NO6-Bj-uYi"/>
+                        <outlet property="helpButtonOutlet" destination="TIn-Nd-gYF" id="YG3-np-l36"/>
                         <outlet property="progressBarView" destination="1HG-f6-Xlw" id="8qv-7k-pig"/>
                         <outletCollection property="answerButtons" destination="TZ1-eM-ii6" collectionClass="NSMutableArray" id="Yg0-XM-U87"/>
                         <outletCollection property="answerButtons" destination="Ye2-oe-Gly" collectionClass="NSMutableArray" id="b8b-KH-aPs"/>
@@ -126,7 +131,7 @@
             <objects>
                 <viewController id="nmk-pY-81M" customClass="QuizResutlsViewController" customModule="FaceFame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CDy-wL-MHY">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VBE-MV-O2E">
@@ -137,7 +142,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zq0-uw-Hen" userLabel="Return Button">
-                                <rect key="frame" x="20" y="752" width="353" height="50"/>
+                                <rect key="frame" x="20" y="742" width="353" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gk3-l9-8ur"/>
@@ -172,9 +177,9 @@
                             <constraint firstItem="Uur-8h-bZn" firstAttribute="top" secondItem="VBE-MV-O2E" secondAttribute="bottom" constant="20" id="B5g-h8-YhA"/>
                             <constraint firstItem="VBE-MV-O2E" firstAttribute="leading" secondItem="9iE-xa-o3q" secondAttribute="leading" constant="20" id="FAv-q5-oSP"/>
                             <constraint firstItem="9iE-xa-o3q" firstAttribute="trailing" secondItem="Uur-8h-bZn" secondAttribute="trailing" constant="20" id="IiT-qd-A6F"/>
-                            <constraint firstItem="9iE-xa-o3q" firstAttribute="bottom" secondItem="zq0-uw-Hen" secondAttribute="bottom" constant="40" id="SxK-kH-lMu"/>
                             <constraint firstItem="9iE-xa-o3q" firstAttribute="trailing" secondItem="zq0-uw-Hen" secondAttribute="trailing" constant="20" id="cq9-G4-lw3"/>
                             <constraint firstItem="9iE-xa-o3q" firstAttribute="trailing" secondItem="WX3-1N-aj2" secondAttribute="trailing" constant="20" id="dgI-4F-RiF"/>
+                            <constraint firstItem="9iE-xa-o3q" firstAttribute="bottom" secondItem="zq0-uw-Hen" secondAttribute="bottom" constant="50" id="jF9-v3-RxE"/>
                             <constraint firstItem="VBE-MV-O2E" firstAttribute="top" secondItem="WX3-1N-aj2" secondAttribute="bottom" constant="20" id="qWJ-Cp-xit"/>
                             <constraint firstItem="VBE-MV-O2E" firstAttribute="centerX" secondItem="CDy-wL-MHY" secondAttribute="centerX" id="tT2-De-mA7"/>
                             <constraint firstItem="WX3-1N-aj2" firstAttribute="leading" secondItem="9iE-xa-o3q" secondAttribute="leading" constant="20" id="zNs-yd-BcN"/>
@@ -204,7 +209,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="questionmark.app" catalog="system" width="128" height="114"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

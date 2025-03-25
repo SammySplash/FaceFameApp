@@ -28,7 +28,9 @@ final class QuizResutlsViewController: UIViewController {
         headerLabel.textColor = .white
         
         updateUI()
-        resultImageView.layer.cornerRadius = resultImageView.frame.height / 4
+        resultImageView.layer.cornerRadius = resultImageView.frame.width / 5
+        resultImageView.layer.masksToBounds = true
+        print("ширина: \(resultImageView.frame.width)")
     }
     
     
