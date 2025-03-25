@@ -21,7 +21,7 @@ struct Question {
         
         for i in 0..<count {
             let actor = keys[i]
-            let image = UIImage(named: actor) ?? UIImage(named: "default")!
+            let image = UIImage(named: actor)
             let help = values[i]
             var wrongAnswers: [String] = []
             
@@ -35,7 +35,7 @@ struct Question {
             wrongAnswers.shuffle()
             
             let question = Question(
-                imageActor: image,
+                imageActor: image ?? UIImage(),
                 currectAnswer: actor,
                 answers: wrongAnswers,
                 help: help
