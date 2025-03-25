@@ -29,6 +29,13 @@ struct Question {
             let help = values[i]
             var wrongAnswers: [String] = []
             
+            while wrongAnswers.count != 3 {
+                if let randomKey = keys.randomElement(),
+                   !wrongAnswers.contains(randomKey) && randomKey != actor {
+                    wrongAnswers.append(randomKey)
+                }
+            }
+            /*
             for _ in 0..<3 {
                 var randomKey = keys.randomElement()
                 if !wrongAnswers.contains(randomKey ?? "") && randomKey != actor {
@@ -40,6 +47,7 @@ struct Question {
                 }
 
             }
+            */
             wrongAnswers.append(actor)
             wrongAnswers.shuffle()
             
