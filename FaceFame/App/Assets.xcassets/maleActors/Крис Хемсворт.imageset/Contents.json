@@ -1,0 +1,25 @@
+{
+  "images" : [
+    {
+<<<<<<< HEAD:FaceFame/App/Assets.xcassets/femaleActors/Милла Йовович.imageset/Contents.json
+      "filename" : "Милла Йовович.jpeg",
+=======
+      "filename" : "Крис Хемсворт.jpeg",
+>>>>>>> dataStore:FaceFame/App/Assets.xcassets/maleActors/Крис Хемсворт.imageset/Contents.json
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

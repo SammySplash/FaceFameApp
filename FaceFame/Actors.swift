@@ -10,33 +10,50 @@ import UIKit
 
 struct Question {
     let imageActor: UIImage
-    let currectAnswer: String
+    let correctAnswer: String
     let answers: [String]
     let help: String
     
     static func getQuestion(count: Int) -> [Question] {
         var questions: [Question] = []
-        let keys = Array(DataStore.femaleActors.keys)
-        let values = Array(DataStore.femaleActors.values)
+        let actors = [
+            DataStore.maleActors
+            //DataStore.femaleActors
+        ]
+        let keys = Array(actors.shuffled()[0].keys)
+        let values = Array(actors.shuffled()[0].values)
         
         for i in 0..<count {
             let actor = keys[i]
-            let image = UIImage(named: actor) ?? UIImage()
-            let help = "Играет в фильме '\(values[i])'"
+            let image = UIImage(named: actor)
+            let help = values[i]
             var wrongAnswers: [String] = []
             
-            for _ in 0..<3 {
+            while wrongAnswers.count != 3 {
                 if let randomKey = keys.randomElement(),
                    !wrongAnswers.contains(randomKey) && randomKey != actor {
                     wrongAnswers.append(randomKey)
                 }
             }
+            /*
+            for _ in 0..<3 {
+                var randomKey = keys.randomElement()
+                if !wrongAnswers.contains(randomKey ?? "") && randomKey != actor {
+                    wrongAnswers.append(randomKey ?? "")
+                }
+                else {
+                    randomKey = keys.randomElement()
+                    wrongAnswers.append(randomKey ?? "")
+                }
+
+            }
+            */
             wrongAnswers.append(actor)
             wrongAnswers.shuffle()
             
             let question = Question(
-                imageActor: image,
-                currectAnswer: actor,
+                imageActor: image ?? UIImage(),
+                correctAnswer: actor,
                 answers: wrongAnswers,
                 help: help
             )
@@ -44,6 +61,5 @@ struct Question {
         }
         return questions
     }
-    
 }
 

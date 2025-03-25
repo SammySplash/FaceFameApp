@@ -1,0 +1,25 @@
+{
+  "images" : [
+    {
+<<<<<<< HEAD:FaceFame/App/Assets.xcassets/femaleActors/Скарлетт Йоханссон.imageset/Contents.json
+      "filename" : "Скарлетт Йоханссон.jpeg",
+=======
+      "filename" : "Морган Фриман.jpeg",
+>>>>>>> dataStore:FaceFame/App/Assets.xcassets/maleActors/Морган Фриман.imageset/Contents.json
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
