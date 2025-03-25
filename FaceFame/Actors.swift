@@ -17,8 +17,8 @@ struct Question {
     static func getQuestion(count: Int) -> [Question] {
         var questions: [Question] = []
         let actors = [
-            DataStore.maleActors,
-            DataStore.femaleActors
+            DataStore.maleActors
+            //DataStore.femaleActors
         ]
         let keys = Array(actors.shuffled()[0].keys)
         let values = Array(actors.shuffled()[0].values)
