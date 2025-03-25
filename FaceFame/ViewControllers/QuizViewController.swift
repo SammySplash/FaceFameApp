@@ -45,7 +45,7 @@ final class QuizViewController: UIViewController {
         answerButtons.forEach{ view.setButton($0) }
         
         questions.forEach{
-            print($0.currectAnswer)
+            print($0.correctAnswer)
         }
         
         
@@ -72,7 +72,7 @@ final class QuizViewController: UIViewController {
     
     @IBAction private func answerButtonAction(_ sender: UIButton) {
         let currentAnswer = sender.currentTitle
-        if currentAnswer == questions[questionIndex].currectAnswer {
+        if currentAnswer == questions[questionIndex].correctAnswer {
             print("угадал")
             currectAnswersCount += 1
             
@@ -90,7 +90,7 @@ final class QuizViewController: UIViewController {
             print("найн")
             
             for button in answerButtons {
-                if button.currentTitle == questions[questionIndex].currectAnswer {
+                if button.currentTitle == questions[questionIndex].correctAnswer {
                     UIView.animate(withDuration: 0.3, animations: {
                         button.backgroundColor = .green
                     }) { _ in
@@ -124,7 +124,7 @@ final class QuizViewController: UIViewController {
 
         //прнты
         
-        print("текущий актер:\(questions[questionIndex].currectAnswer)")
+        print("текущий актер:\(questions[questionIndex].correctAnswer)")
         print("questionIndex: \(questionIndex)")
         
         ActorImageView.image = questions[questionIndex].imageActor
