@@ -28,9 +28,8 @@ final class QuizResutlsViewController: UIViewController {
         headerLabel.textColor = .white
         
         updateUI()
-        resultImageView.layer.cornerRadius = resultImageView.frame.width / 5
-        resultImageView.layer.masksToBounds = true
-        print("ширина: \(resultImageView.frame.width)")
+        resultImageView.layer.cornerRadius = resultImageView.frame.height / 5
+
     }
     
     
@@ -40,13 +39,12 @@ final class QuizResutlsViewController: UIViewController {
         if Double(currentAnswers) / Double(totalAnswers) >= 0.8 {
             headerLabel.text = "Ты молодец!"
             diescriptionLabel.text = "Твой результат: \(currentAnswers) / \(totalAnswers)"
-            resultImageView.image = UIImage(named: "Арни_рад")
+            resultImageView.image = UIImage(named: "win2")
             print("currentAnswers: \(String(describing: currentAnswers))")
         } else {
             headerLabel.text = "Арни грустит"
             diescriptionLabel.text = "Твой результат: \(currentAnswers) / \(totalAnswers)"
-            resultImageView.image = UIImage(named: "Арни_грустит")
+            resultImageView.image = UIImage(named: "win2")
         }
-        resultImageView.layer.cornerRadius = resultImageView.frame.height / 4
     }
 }

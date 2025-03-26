@@ -1,11 +1,7 @@
 {
   "images" : [
     {
-<<<<<<< HEAD:FaceFame/App/Assets.xcassets/femaleActors/Джоди Тёрнер-Смит.imageset/Contents.json
-      "filename" : "Джоди Тёрнер-Смит.jpg",
-=======
       "filename" : "default.jpeg",
->>>>>>> dataStore:FaceFame/App/Assets.xcassets/default.imageset/Contents.json
       "idiom" : "universal",
       "scale" : "1x"
     },

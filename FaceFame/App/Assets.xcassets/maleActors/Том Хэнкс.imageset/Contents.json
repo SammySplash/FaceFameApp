@@ -1,11 +1,7 @@
 {
   "images" : [
     {
-<<<<<<< HEAD:FaceFame/App/Assets.xcassets/femaleActors/Энн Хэтэуэй.imageset/Contents.json
-      "filename" : "Энн Хэтэуэй.jpg",
-=======
       "filename" : "Том Хэнкс.jpg",
->>>>>>> dataStore:FaceFame/App/Assets.xcassets/maleActors/Том Хэнкс.imageset/Contents.json
       "idiom" : "universal",
       "scale" : "1x"
     },

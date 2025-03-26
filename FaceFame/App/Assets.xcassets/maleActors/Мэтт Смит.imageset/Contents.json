@@ -1,11 +1,7 @@
 {
   "images" : [
     {
-<<<<<<< HEAD:FaceFame/App/Assets.xcassets/femaleActors/Хлоя Грейс Морец.imageset/Contents.json
-      "filename" : "Хлоя Грейс Морец.jpg",
-=======
       "filename" : "Мэтт Смит.jpeg",
->>>>>>> dataStore:FaceFame/App/Assets.xcassets/maleActors/Мэтт Смит.imageset/Contents.json
       "idiom" : "universal",
       "scale" : "1x"
     },

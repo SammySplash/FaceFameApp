@@ -1,11 +1,7 @@
 {
   "images" : [
     {
-<<<<<<< HEAD
-      "filename" : "Кейт Мара.jpg",
-=======
       "filename" : "Кейт Мара.jpeg",
->>>>>>> dataStore
       "idiom" : "universal",
       "scale" : "1x"
     },

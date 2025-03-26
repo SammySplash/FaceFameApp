@@ -1,11 +1,7 @@
 {
   "images" : [
     {
-<<<<<<< HEAD:FaceFame/App/Assets.xcassets/maleActors/Билл Мюррей.imageset/Contents.json
-      "filename" : "Билл Мюррей.jpeg",
-=======
       "filename" : "Чедвик Боузман.jpeg",
->>>>>>> dataStore:FaceFame/App/Assets.xcassets/maleActors/Чедвик Боузман.imageset/Contents.json
       "idiom" : "universal",
       "scale" : "1x"
     },

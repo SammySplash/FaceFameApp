@@ -32,12 +32,7 @@ final class QuizViewController: UIViewController {
         titleLabel.text = "Угадай звезду"
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.boldSystemFont(ofSize: 40)
-        titleLabel.textColor = UIColor(
-            red: 242/255,
-            green: 195/255,
-            blue: 130/255,
-            alpha: 1
-        )
+        titleLabel.textColor = view.getMainColor()
         titleLabel.sizeToFit()
         self.navigationItem.titleView = titleLabel
         
@@ -45,9 +40,9 @@ final class QuizViewController: UIViewController {
         view.addVerticalGradientLayer()
         answerButtons.forEach{ view.setButton($0) }
         view.setButton(helpButtonOutlet)
-        
+        progressBarView.progressTintColor = view.getMainColor()
         questions.forEach{
-            print($0.currectAnswer)
+            print($0.correctAnswer)
         }
         
         
@@ -75,7 +70,7 @@ final class QuizViewController: UIViewController {
     
     @IBAction private func answerButtonAction(_ sender: UIButton) {
         let currentAnswer = sender.currentTitle
-        if currentAnswer == questions[questionIndex].currectAnswer {
+        if currentAnswer == questions[questionIndex].correctAnswer {
             print("угадал")
             currectAnswersCount += 1
             
@@ -93,7 +88,7 @@ final class QuizViewController: UIViewController {
             print("найн")
             
             for button in answerButtons {
-                if button.currentTitle == questions[questionIndex].currectAnswer {
+                if button.currentTitle == questions[questionIndex].correctAnswer {
                     UIView.animate(withDuration: 0.3, animations: {
                         button.backgroundColor = .green
                     }) { _ in
@@ -127,7 +122,7 @@ final class QuizViewController: UIViewController {
         
         //прнты
         
-        print("текущий актер:\(questions[questionIndex].currectAnswer)")
+        print("текущий актер:\(questions[questionIndex].correctAnswer)")
         print("questionIndex: \(questionIndex)")
         
         ActorImageView.image = questions[questionIndex].imageActor
