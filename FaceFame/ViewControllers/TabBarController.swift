@@ -11,6 +11,7 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true
         selectedIndex = 1
         delegate = self
         setupTabBarAppearance()
