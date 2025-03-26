@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-// MARK: - Set background color
+// MARK: - Set color
 extension UIView {
     func addVerticalGradientLayer() {
         let primaryColor = UIColor(
@@ -32,6 +32,16 @@ extension UIView {
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 0, y: 1)
         layer.insertSublayer(gradient, at: 0)
+    }
+    
+    func getMainColor() -> UIColor {
+        let color = UIColor(
+            red: 242/255,
+            green: 195/255,
+            blue: 130/255,
+            alpha: 1
+        )
+        return color
     }
 }
 

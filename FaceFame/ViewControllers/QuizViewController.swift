@@ -14,7 +14,8 @@ final class QuizViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet private var ActorImageView: UIImageView!
     @IBOutlet private var answerButtons: [UIButton]!
-    @IBOutlet var progressBarView: UIProgressView!
+    @IBOutlet private var progressBarView: UIProgressView!
+    @IBOutlet private var helpButtonOutlet: UIButton!
     
     //MARK: - Public properties
     var currectAnswersCount = 0
@@ -27,29 +28,26 @@ final class QuizViewController: UIViewController {
         
         self.navigationItem.hidesBackButton = true
         
-            let titleLabel = UILabel()
-            titleLabel.text = "FaceFame"
-            titleLabel.textAlignment = .center
-            titleLabel.font = UIFont.boldSystemFont(ofSize: 40)
-        titleLabel.textColor = UIColor(
-            red: 242/255,
-            green: 195/255,
-            blue: 130/255,
-            alpha: 1
-        )
-            titleLabel.sizeToFit()
-            self.navigationItem.titleView = titleLabel
+        let titleLabel = UILabel()
+        titleLabel.text = "Угадай звезду"
+        titleLabel.textAlignment = .center
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 40)
+        titleLabel.textColor = view.getMainColor()
+        titleLabel.sizeToFit()
+        self.navigationItem.titleView = titleLabel
         
         updateUI()
         view.addVerticalGradientLayer()
         answerButtons.forEach{ view.setButton($0) }
-        
+        view.setButton(helpButtonOutlet)
+        progressBarView.progressTintColor = view.getMainColor()
         questions.forEach{
             print($0.correctAnswer)
         }
         
         
         ActorImageView.layer.cornerRadius = ActorImageView.frame.height / 5
+        progressBarView.layer.cornerRadius = progressBarView.frame.height / 2
     }
     private func showAlert(withTitle title: String, andMessage message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -118,10 +116,10 @@ final class QuizViewController: UIViewController {
     
     // MARK: - Private methods
     private func updateUI() {
- 
+        
         let currentProgress = Float(questionIndex) / Float(questions.count)
         progressBarView.setProgress(currentProgress, animated: true)
-
+        
         //прнты
         
         print("текущий актер:\(questions[questionIndex].correctAnswer)")
