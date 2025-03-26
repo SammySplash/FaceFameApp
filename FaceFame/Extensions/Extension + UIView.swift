@@ -62,10 +62,10 @@ extension UIView {
 // MARK: - Set elements view
 extension UIView {
     func setButton(_ button: UIButton) {
-        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).cgColor
         button.layer.borderWidth = 2
         button.layer.cornerRadius = button.frame.height / 2
         button.backgroundColor = nil
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
     }
 }

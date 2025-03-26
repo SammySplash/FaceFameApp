@@ -9,17 +9,23 @@ import Foundation
 import UIKit
 
 struct Question {
+    
     let imageActor: UIImage
     let correctAnswer: String
     let answers: [String]
     let help: String
     
-    static func getQuestion(count: Int) -> [Question] {
+    static func getQuestion(count: Int, theme: String) -> [Question] {
+        
         var questions: [Question] = []
-        let actors = [
-            DataStore.maleActors
-            //DataStore.femaleActors
-        ]
+        var actors = [DataStore.maleActors]
+        
+        if theme == "female" {
+            actors = [DataStore.femaleActors]
+        } else {
+            actors = [DataStore.maleActors]
+        }
+        
         let keys = Array(actors.shuffled()[0].keys)
         let values = Array(actors.shuffled()[0].values)
         
@@ -35,19 +41,7 @@ struct Question {
                     wrongAnswers.append(randomKey)
                 }
             }
-            /*
-            for _ in 0..<3 {
-                var randomKey = keys.randomElement()
-                if !wrongAnswers.contains(randomKey ?? "") && randomKey != actor {
-                    wrongAnswers.append(randomKey ?? "")
-                }
-                else {
-                    randomKey = keys.randomElement()
-                    wrongAnswers.append(randomKey ?? "")
-                }
-
-            }
-            */
+            
             wrongAnswers.append(actor)
             wrongAnswers.shuffle()
             
@@ -62,4 +56,3 @@ struct Question {
         return questions
     }
 }
-
