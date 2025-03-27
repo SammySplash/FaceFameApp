@@ -5,45 +5,58 @@
 //  Created by Ast on 20.03.2025.
 //
 
-import Foundation
 import UIKit
 
 struct Question {
+    
     let imageActor: UIImage
-    let currectAnswer: String
+    let correctAnswer: String
     let answers: [String]
     let help: String
     
     static func getQuestion(count: Int) -> [Question] {
+        
         var questions: [Question] = []
-        let keys = Array(DataStore.femaleActors.keys)
-        let values = Array(DataStore.femaleActors.values)
+        var actors = DataStore.maleActors
+        var isMale = true
         
         for i in 0..<count {
+            
+            let keys = Array([actors].shuffled()[0].keys)
+            let values = Array([actors].shuffled()[0].values)
+            
             let actor = keys[i]
-            let image = UIImage(named: actor) ?? UIImage()
-            let help = "Играет в фильме '\(values[i])'"
+            let image = UIImage(named: actor)
+            let help = values[i]
             var wrongAnswers: [String] = []
             
-            for _ in 0..<3 {
+            while wrongAnswers.count != 3 {
                 if let randomKey = keys.randomElement(),
                    !wrongAnswers.contains(randomKey) && randomKey != actor {
                     wrongAnswers.append(randomKey)
                 }
             }
+            
             wrongAnswers.append(actor)
             wrongAnswers.shuffle()
             
+            if isMale {
+                actors = DataStore.femaleActors
+                isMale = false
+            } else {
+                actors = DataStore.maleActors
+                isMale = true
+            }
+            
             let question = Question(
-                imageActor: image,
-                currectAnswer: actor,
+                imageActor: image ?? UIImage(),
+                correctAnswer: actor,
                 answers: wrongAnswers,
                 help: help
             )
+            
             questions.append(question)
         }
         return questions
     }
-    
 }
-

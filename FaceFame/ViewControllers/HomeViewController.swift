@@ -13,8 +13,8 @@ final class HomeViewController: UIViewController {
     
     @IBOutlet private var avatarImageView: UIImageView!
     @IBOutlet private var usernameLabel: UILabel!
-    @IBOutlet private var slider: UISlider!
-    @IBOutlet private var scrollView: UIScrollView!
+    @IBOutlet private var headerLabel: UILabel!
+    
     @IBOutlet private var newGameButton: UIButton!
     
     private var newGameButtonGradientLayer: CAGradientLayer?
@@ -23,13 +23,20 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         view.addVerticalGradientLayer()
+        view.setButton(newGameButton)
         
-        usernameLabel.text = "Welcome, \(userName ?? "")!"
+        headerLabel.text = "Игра - Quiz"
+        headerLabel.textAlignment = .center
+        headerLabel.font = UIFont.boldSystemFont(ofSize: 40)
+        headerLabel.textColor = view.getMainColor()
+        //headerLabel.sizeToFit()
+        
+        //usernameLabel.text = "Welcome, \(userName ?? "")!"
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        view.setupStartButton(newGameButton)
+        //view.setupStartButton(newGameButton)
     }
     
     @IBAction func newGameButtonTapped(_ sender: UIButton) {

@@ -37,9 +37,9 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate {
         for (index, item) in items.enumerated() {
             let color: UIColor
             switch index {
-            case 0: color = .systemYellow
+            case 0: color = .systemBlue
             case 1: color = .systemBlue
-            case 2: color = .systemGreen
+            case 2: color = .systemBlue
             default: color = .gray
             }
             

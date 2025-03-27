@@ -27,25 +27,20 @@ final class QuizViewController: UIViewController {
         
         self.navigationItem.hidesBackButton = true
         
-            let titleLabel = UILabel()
-            titleLabel.text = "FaceFame"
-            titleLabel.textAlignment = .center
-            titleLabel.font = UIFont.boldSystemFont(ofSize: 40)
-        titleLabel.textColor = UIColor(
-            red: 242/255,
-            green: 195/255,
-            blue: 130/255,
-            alpha: 1
-        )
-            titleLabel.sizeToFit()
-            self.navigationItem.titleView = titleLabel
+        let titleLabel = UILabel()
+        titleLabel.text = "Угадай звезду"
+        titleLabel.textAlignment = .center
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 40)
+        titleLabel.textColor = view.getMainColor()
+        titleLabel.sizeToFit()
+        self.navigationItem.titleView = titleLabel
         
         updateUI()
         view.addVerticalGradientLayer()
         answerButtons.forEach{ view.setButton($0) }
         
         questions.forEach{
-            print($0.currectAnswer)
+            print($0.correctAnswer)
         }
         
         
@@ -72,8 +67,8 @@ final class QuizViewController: UIViewController {
     
     @IBAction private func answerButtonAction(_ sender: UIButton) {
         let currentAnswer = sender.currentTitle
-        if currentAnswer == questions[questionIndex].currectAnswer {
-            print("угадал")
+        if currentAnswer == questions[questionIndex].correctAnswer {
+            //print("угадал")
             currectAnswersCount += 1
             
             UIView.animate(withDuration: 0.3, animations: {
@@ -87,10 +82,10 @@ final class QuizViewController: UIViewController {
             }
             
         } else {
-            print("найн")
+            //print("найн")
             
             for button in answerButtons {
-                if button.currentTitle == questions[questionIndex].currectAnswer {
+                if button.currentTitle == questions[questionIndex].correctAnswer {
                     UIView.animate(withDuration: 0.3, animations: {
                         button.backgroundColor = .green
                     }) { _ in
@@ -124,8 +119,8 @@ final class QuizViewController: UIViewController {
 
         //прнты
         
-        print("текущий актер:\(questions[questionIndex].currectAnswer)")
-        print("questionIndex: \(questionIndex)")
+        //print("текущий актер:\(questions[questionIndex].correctAnswer)")
+        //print("questionIndex: \(questionIndex)")
         
         ActorImageView.image = questions[questionIndex].imageActor
         

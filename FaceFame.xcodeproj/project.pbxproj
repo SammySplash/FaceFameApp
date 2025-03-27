@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E94DC062D9566F400FB76E7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E94DC052D9566F400FB76E7 /* SettingsViewController.swift */; };
 		0EFB46E42D8C1CD70082C3C1 /* Actors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB46E32D8C1CD70082C3C1 /* Actors.swift */; };
 		0EFB46E62D8C1D0B0082C3C1 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB46E52D8C1D0B0082C3C1 /* DataStore.swift */; };
 		44BAAD932D93FE3A00476323 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BAAD922D93FE3A00476323 /* TabBarController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E94DC052D9566F400FB76E7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0EFB46E32D8C1CD70082C3C1 /* Actors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Actors.swift; path = FaceFame/Actors.swift; sourceTree = SOURCE_ROOT; };
 		0EFB46E52D8C1D0B0082C3C1 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		44BAAD922D93FE3A00476323 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				FFF385F62D8DC33900F9A159 /* QuizResutlsViewController.swift */,
 				44BAAD982D94070A00476323 /* AuthViewController.swift */,
 				44BAAD942D93FE7C00476323 /* HomeViewController.swift */,
+				0E94DC052D9566F400FB76E7 /* SettingsViewController.swift */,
 				44BAADA22D94CE9C00476323 /* CreatorsViewController.swift */,
 				44BAAD922D93FE3A00476323 /* TabBarController.swift */,
 			);
@@ -234,6 +237,7 @@
 				FFF385F72D8DC33900F9A159 /* QuizResutlsViewController.swift in Sources */,
 				44BAAD952D93FE7C00476323 /* HomeViewController.swift in Sources */,
 				0EFB46E62D8C1D0B0082C3C1 /* DataStore.swift in Sources */,
+				0E94DC062D9566F400FB76E7 /* SettingsViewController.swift in Sources */,
 				FFF385F52D8DBBA000F9A159 /* QuizNavigationController.swift in Sources */,
 				0EFB46E42D8C1CD70082C3C1 /* Actors.swift in Sources */,
 			);
