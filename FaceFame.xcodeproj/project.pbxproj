@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E94DC062D9566F400FB76E7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E94DC052D9566F400FB76E7 /* SettingsViewController.swift */; };
 		0EFB46E42D8C1CD70082C3C1 /* Actors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB46E32D8C1CD70082C3C1 /* Actors.swift */; };
 		0EFB46E62D8C1D0B0082C3C1 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB46E52D8C1D0B0082C3C1 /* DataStore.swift */; };
+		44BAAD932D93FE3A00476323 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BAAD922D93FE3A00476323 /* TabBarController.swift */; };
+		44BAAD952D93FE7C00476323 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BAAD942D93FE7C00476323 /* HomeViewController.swift */; };
+		44BAAD992D94070A00476323 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BAAD982D94070A00476323 /* AuthViewController.swift */; };
+		44BAADA32D94CE9C00476323 /* CreatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BAADA22D94CE9C00476323 /* CreatorsViewController.swift */; };
 		44FCC01E2D8ACF0B0047BE76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCC0142D8ACF0B0047BE76 /* AppDelegate.swift */; };
 		44FCC01F2D8ACF0B0047BE76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCC01B2D8ACF0B0047BE76 /* SceneDelegate.swift */; };
 		44FCC0202D8ACF0B0047BE76 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCC01C2D8ACF0B0047BE76 /* QuizViewController.swift */; };
@@ -22,8 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E94DC052D9566F400FB76E7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0EFB46E32D8C1CD70082C3C1 /* Actors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Actors.swift; path = FaceFame/Actors.swift; sourceTree = SOURCE_ROOT; };
 		0EFB46E52D8C1D0B0082C3C1 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		44BAAD922D93FE3A00476323 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		44BAAD942D93FE7C00476323 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		44BAAD982D94070A00476323 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		44BAADA22D94CE9C00476323 /* CreatorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorsViewController.swift; sourceTree = "<group>"; };
 		44FCBFFC2D8AC81E0047BE76 /* FaceFame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceFame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FCC0142D8ACF0B0047BE76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44FCC0152D8ACF0B0047BE76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +103,11 @@
 				44FCC01C2D8ACF0B0047BE76 /* QuizViewController.swift */,
 				FFF385F42D8DBBA000F9A159 /* QuizNavigationController.swift */,
 				FFF385F62D8DC33900F9A159 /* QuizResutlsViewController.swift */,
+				44BAAD982D94070A00476323 /* AuthViewController.swift */,
+				44BAAD942D93FE7C00476323 /* HomeViewController.swift */,
+				0E94DC052D9566F400FB76E7 /* SettingsViewController.swift */,
+				44BAADA22D94CE9C00476323 /* CreatorsViewController.swift */,
+				44BAAD922D93FE3A00476323 /* TabBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -213,11 +228,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44BAADA32D94CE9C00476323 /* CreatorsViewController.swift in Sources */,
 				44FCC01E2D8ACF0B0047BE76 /* AppDelegate.swift in Sources */,
 				44FCC01F2D8ACF0B0047BE76 /* SceneDelegate.swift in Sources */,
 				44FCC0202D8ACF0B0047BE76 /* QuizViewController.swift in Sources */,
+				44BAAD932D93FE3A00476323 /* TabBarController.swift in Sources */,
+				44BAAD992D94070A00476323 /* AuthViewController.swift in Sources */,
 				FFF385F72D8DC33900F9A159 /* QuizResutlsViewController.swift in Sources */,
+				44BAAD952D93FE7C00476323 /* HomeViewController.swift in Sources */,
 				0EFB46E62D8C1D0B0082C3C1 /* DataStore.swift in Sources */,
+				0E94DC062D9566F400FB76E7 /* SettingsViewController.swift in Sources */,
 				FFF385F52D8DBBA000F9A159 /* QuizNavigationController.swift in Sources */,
 				0EFB46E42D8C1CD70082C3C1 /* Actors.swift in Sources */,
 			);
@@ -266,7 +286,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Ast.FaceFrame;
+				PRODUCT_BUNDLE_IDENTIFIER = Ast.FaceFame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -299,7 +319,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Ast.FaceFrame;
+				PRODUCT_BUNDLE_IDENTIFIER = Ast.FaceFame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
