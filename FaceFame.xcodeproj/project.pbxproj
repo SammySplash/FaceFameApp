@@ -12,6 +12,7 @@
 		44BAAD932D93FE3A00476323 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BAAD922D93FE3A00476323 /* TabBarController.swift */; };
 		44BAAD952D93FE7C00476323 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BAAD942D93FE7C00476323 /* HomeViewController.swift */; };
 		44BAAD992D94070A00476323 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BAAD982D94070A00476323 /* AuthViewController.swift */; };
+		44BAADA32D94CE9C00476323 /* CreatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BAADA22D94CE9C00476323 /* CreatorsViewController.swift */; };
 		44FCC01E2D8ACF0B0047BE76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCC0142D8ACF0B0047BE76 /* AppDelegate.swift */; };
 		44FCC01F2D8ACF0B0047BE76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCC01B2D8ACF0B0047BE76 /* SceneDelegate.swift */; };
 		44FCC0202D8ACF0B0047BE76 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCC01C2D8ACF0B0047BE76 /* QuizViewController.swift */; };
@@ -30,6 +31,7 @@
 		44BAAD922D93FE3A00476323 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		44BAAD942D93FE7C00476323 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		44BAAD982D94070A00476323 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		44BAADA22D94CE9C00476323 /* CreatorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorsViewController.swift; sourceTree = "<group>"; };
 		44FCBFFC2D8AC81E0047BE76 /* FaceFame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceFame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FCC0142D8ACF0B0047BE76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44FCC0152D8ACF0B0047BE76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				FFF385F62D8DC33900F9A159 /* QuizResutlsViewController.swift */,
 				44BAAD982D94070A00476323 /* AuthViewController.swift */,
 				44BAAD942D93FE7C00476323 /* HomeViewController.swift */,
+				44BAADA22D94CE9C00476323 /* CreatorsViewController.swift */,
 				44BAAD922D93FE3A00476323 /* TabBarController.swift */,
 			);
 			path = ViewControllers;
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44BAADA32D94CE9C00476323 /* CreatorsViewController.swift in Sources */,
 				44FCC01E2D8ACF0B0047BE76 /* AppDelegate.swift in Sources */,
 				44FCC01F2D8ACF0B0047BE76 /* SceneDelegate.swift in Sources */,
 				44FCC0202D8ACF0B0047BE76 /* QuizViewController.swift in Sources */,

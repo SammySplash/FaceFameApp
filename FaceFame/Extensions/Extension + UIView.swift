@@ -59,3 +59,35 @@ extension UIView {
         button.setTitleColor(.white, for: .normal)
     }
 }
+
+// MARK: - Setup exit & start buttons
+extension UIView {
+    func setupStartButton(_ button: UIButton) {
+        let cornerRadius = button.frame.height / 2
+        button.layer.cornerRadius = cornerRadius
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor(red: 0.6, green: 1.0, blue: 0.6, alpha: 0.8).cgColor,
+            UIColor(red: 0.2, green: 0.8, blue: 0.2, alpha: 0.8).cgColor
+        ]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.frame = button.bounds
+        gradientLayer.cornerRadius = cornerRadius
+        
+        if let existingLayer = button.layer.sublayers?.first(
+            where: { $0 is CAGradientLayer }) {
+            existingLayer.removeFromSuperlayer()
+        }
+        button.layer.insertSublayer(gradientLayer, at: 0)
+    }
+}
+
+//MARK: - Rounded Image
+extension UIImageView {
+    func makeRounded() {
+        self.layer.cornerRadius = self.frame.width / 2
+        self.clipsToBounds = true
+    }
+}

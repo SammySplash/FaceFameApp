@@ -11,8 +11,10 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         selectedIndex = 1
         delegate = self
+        
         setupTabBarAppearance()
         updateTabBarAppearance(for: selectedIndex)
     }
