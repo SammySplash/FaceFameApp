@@ -31,7 +31,7 @@ final class QuizViewController: UIViewController {
         titleLabel.text = "Угадай звезду"
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.boldSystemFont(ofSize: 40)
-        titleLabel.textColor = view.getMainColor()
+        //titleLabel.textColor = view.getMainColor()
         titleLabel.sizeToFit()
         self.navigationItem.titleView = titleLabel
         

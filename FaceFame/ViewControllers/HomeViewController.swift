@@ -28,7 +28,7 @@ final class HomeViewController: UIViewController {
         headerLabel.text = "Игра - Quiz"
         headerLabel.textAlignment = .center
         headerLabel.font = UIFont.boldSystemFont(ofSize: 40)
-        headerLabel.textColor = view.getMainColor()
+        //headerLabel.textColor = view.getMainColor()
         //headerLabel.sizeToFit()
         
         //usernameLabel.text = "Welcome, \(userName ?? "")!"
