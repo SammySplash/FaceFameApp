@@ -10,6 +10,7 @@ import UIKit
 final class HomeViewController: UIViewController {
     
     var userName: String!
+    var questions: [Question] = []
     
     @IBOutlet private var avatarImageView: UIImageView!
     @IBOutlet private var usernameLabel: UILabel!
@@ -37,16 +38,12 @@ final class HomeViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showQuizSegue",
-           let quizVC = segue.destination as? QuizViewController,
-           let questions = sender as? [Question] {
-            quizVC.questions = questions
-        }
+           let quizVC = segue.destination as? QuizViewController
+        quizVC?.questions = questions
     }
     
     @IBAction func newGameButtonTapped() {
-        let questions = Question.getQuestion(count: 5)
-        self.performSegue(withIdentifier: "showQuizSegue", sender: questions)
+        questions = Question.getQuestion(count: 6, theme: "female")
     }
 }
 

@@ -10,7 +10,7 @@ import UIKit
 final class QuizViewController: UIViewController {
     
     var questions: [Question] = []
-    //var questions = Question.getQuestion(count: 5, theme: "female")
+    
     // MARK: - IBOutlets
     @IBOutlet private var ActorImageView: UIImageView!
     @IBOutlet private var answerButtons: [UIButton]!
