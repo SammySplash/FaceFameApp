@@ -1,11 +1,7 @@
 {
   "images" : [
     {
-<<<<<<<< HEAD:FaceFame/App/Assets.xcassets/maleActors/Морган Фриман.imageset/Contents.json
-      "filename" : "Морган Фриман.jpeg",
-========
       "filename" : "Крис Хемсворт.jpeg",
->>>>>>>> 3a024b0fcdf3744dbfdc3f603c679b9aed60cf05:FaceFame/App/Assets.xcassets/maleActors/Крис Хемсворт.imageset/Contents.json
       "idiom" : "universal",
       "scale" : "1x"
     },
