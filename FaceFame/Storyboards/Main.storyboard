@@ -35,8 +35,8 @@
                                     <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="19"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="newGameButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OPM-dU-yW5"/>
-                                    <segue destination="Az5-Xl-0R5" kind="show" id="rcg-pR-Hyo"/>
+                                    <action selector="newGameButtonTapped" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9Wg-PL-cFg"/>
+                                    <segue destination="Az5-Xl-0R5" kind="show" identifier="showQuizSegue" id="AWy-H2-MKe"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image 1" translatesAutoresizingMaskIntoConstraints="NO" id="3ty-g9-9o6">
@@ -75,6 +75,12 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="rJb-1r-TYD"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="dao-G5-4NM"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVZ-tp-U1a">
+                                <rect key="frame" x="154" y="586" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.35919296230517656" green="0.62693760340420246" blue="0.96611279249191284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -101,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="1982.4427480916029" y="-55.633802816901408"/>
         </scene>
-        <!--Quiz1-->
+        <!--Quiz-->
         <scene sceneID="Qkm-Wd-osW">
             <objects>
-                <viewControllerPlaceholder storyboardName="Quiz" referencedIdentifier="Quiz1" id="Az5-Xl-0R5" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Quiz" id="Az5-Xl-0R5" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="5mG-nX-98E"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4I-dt-gQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

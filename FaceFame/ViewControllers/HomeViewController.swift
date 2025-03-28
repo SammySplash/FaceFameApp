@@ -24,7 +24,11 @@ final class HomeViewController: UIViewController {
         
         view.addVerticalGradientLayer()
         
-        usernameLabel.text = "Welcome, \(userName ?? "")!"
+        if let userName = userName, !userName.isEmpty {
+            usernameLabel.text = "Welcome, \(userName)!"
+        } else {
+            usernameLabel.text = "Welcome!"
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -32,8 +36,17 @@ final class HomeViewController: UIViewController {
         view.setupStartButton(newGameButton)
     }
     
-    @IBAction func newGameButtonTapped(_ sender: UIButton) {
-        print("New Game Started")
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showQuizSegue",
+           let quizVC = segue.destination as? QuizViewController,
+           let questions = sender as? [Question] {
+            quizVC.questions = questions
+        }
+    }
+    
+    @IBAction func newGameButtonTapped() {
+        let questions = Question.getQuestion(count: 5)
+        self.performSegue(withIdentifier: "showQuizSegue", sender: questions)
     }
 }
 
