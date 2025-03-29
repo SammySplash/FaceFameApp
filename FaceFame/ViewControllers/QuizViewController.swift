@@ -71,9 +71,7 @@ final class QuizViewController: UIViewController {
     @IBAction private func answerButtonAction(_ sender: UIButton) {
         let currentAnswer = sender.currentTitle
         if currentAnswer == questions[questionIndex].correctAnswer {
-            print("угадал")
             currectAnswersCount += 1
-            
             UIView.animate(withDuration: 0.3, animations: {
                 sender.backgroundColor = .green
             }) { _ in
@@ -85,8 +83,6 @@ final class QuizViewController: UIViewController {
             }
             
         } else {
-            print("найн")
-            
             for button in answerButtons {
                 if button.currentTitle == questions[questionIndex].correctAnswer {
                     UIView.animate(withDuration: 0.3, animations: {
@@ -119,12 +115,6 @@ final class QuizViewController: UIViewController {
         
         let currentProgress = Float(questionIndex) / Float(questions.count)
         progressBarView.setProgress(currentProgress, animated: true)
-        
-        //прнты
-        
-        print("текущий актер:\(questions[questionIndex].correctAnswer)")
-        print("questionIndex: \(questionIndex)")
-        
         ActorImageView.image = questions[questionIndex].imageActor
         
         for (buttonIndex, button) in answerButtons.enumerated() {
