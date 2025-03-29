@@ -15,13 +15,18 @@ final class HomeViewController: UIViewController {
     @IBOutlet private var avatarImageView: UIImageView!
     @IBOutlet private var usernameLabel: UILabel!
     @IBOutlet private var slider: UISlider!
-    @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet private var newGameButton: UIButton!
+    @IBOutlet private var ScrollViewLabel: UILabel!
     
     private var newGameButtonGradientLayer: CAGradientLayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        slider.minimumTrackTintColor = view.getMainColor()
+        slider.maximumTrackTintColor = .black
+        
+        ScrollViewLabel.text = "Количество вопросов \(Int(slider.value))"
         
         view.addVerticalGradientLayer()
         
@@ -30,6 +35,11 @@ final class HomeViewController: UIViewController {
         } else {
             usernameLabel.text = "Welcome!"
         }
+    }
+
+    
+    @IBAction func sliderAction() {
+        ScrollViewLabel.text = "Количество вопросов \(Int(slider.value))"
     }
     
     override func viewDidLayoutSubviews() {
@@ -43,7 +53,7 @@ final class HomeViewController: UIViewController {
     }
     
     @IBAction func newGameButtonTapped() {
-        questions = Question.getQuestion(count: 6, theme: "female")
+        questions = Question.getQuestion(count: Int(slider.value), theme: .female)
     }
 }
 

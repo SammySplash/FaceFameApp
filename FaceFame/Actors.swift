@@ -8,47 +8,47 @@
 import Foundation
 import UIKit
 
+enum Theme {
+    case male
+    case female
+
+    func getActors() -> [[String]] {
+        switch self {
+        case .male:
+            return DataStore.maleActors
+        case .female:
+            return DataStore.femaleActors
+        }
+    }
+}
+
 struct Question {
-    
+
     let imageActor: UIImage
     let correctAnswer: String
     let answers: [String]
     let help: String
-    
-    static func getQuestion(count: Int, theme: String) -> [Question] {
-        
+
+    static func getQuestion(count: Int, theme: Theme) -> [Question] {
         var questions: [Question] = []
-        var actors = [DataStore.maleActors]
-        
-        if theme == "female" {
-            actors = [DataStore.femaleActors]
-        } else {
-            actors = [DataStore.maleActors]
-        }
-        
-        let keys = Array(actors.shuffled()[0].keys)
-        let values = Array(actors.shuffled()[0].values)
-        
-        for i in 0..<count {
-            let actor = keys[i]
-            let image = UIImage(named: actor)
-            let help = values[i]
-            var wrongAnswers: [String] = []
-            
-            while wrongAnswers.count != 3 {
-                if let randomKey = keys.randomElement(),
-                   !wrongAnswers.contains(randomKey) && randomKey != actor {
-                    wrongAnswers.append(randomKey)
-                }
-            }
-            
-            wrongAnswers.append(actor)
-            wrongAnswers.shuffle()
-            
+        let actors = theme.getActors().shuffled()
+
+        let numberOfQuestions = min(count, actors.count)
+
+        for i in 0..<numberOfQuestions {
+            let actorInfo = actors[i]
+            let actor = actorInfo[0]
+            let help = actorInfo[1]
+            let image = UIImage(named: actor) ?? UIImage()
+
+            let wrongAnswers = actors.filter { $0[0] != actor }.map { $0[0] }.shuffled().prefix(3)
+            let allAnswers = Array(wrongAnswers) + [actor]
+            let shuffledAnswers = allAnswers.shuffled()
+
             let question = Question(
-                imageActor: image ?? UIImage(),
+                imageActor: image,
                 correctAnswer: actor,
-                answers: wrongAnswers,
+                answers: shuffledAnswers,
                 help: help
             )
             questions.append(question)
