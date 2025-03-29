@@ -11,6 +11,7 @@ import UIKit
 enum Theme {
     case male
     case female
+    case mixed
 
     func getActors() -> [[String]] {
         switch self {
@@ -18,6 +19,8 @@ enum Theme {
             return DataStore.maleActors
         case .female:
             return DataStore.femaleActors
+        case .mixed:
+            return (DataStore.femaleActors + DataStore.femaleActors).shuffled()
         }
     }
 }
