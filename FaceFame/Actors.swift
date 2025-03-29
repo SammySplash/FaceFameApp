@@ -20,7 +20,7 @@ enum Theme {
         case .female:
             return DataStore.femaleActors
         case .mixed:
-            return (DataStore.femaleActors + DataStore.femaleActors).shuffled()
+            return (DataStore.femaleActors + DataStore.maleActors).shuffled()
         }
     }
 }

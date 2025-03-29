@@ -11,6 +11,7 @@ final class HomeViewController: UIViewController {
     
     var userName: String!
     var questions: [Question] = []
+    var typeOfQestions: Theme = .male
     
     @IBOutlet private var avatarImageView: UIImageView!
     @IBOutlet private var usernameLabel: UILabel!
@@ -18,6 +19,9 @@ final class HomeViewController: UIViewController {
     @IBOutlet private var newGameButton: UIButton!
     @IBOutlet private var ScrollViewLabel: UILabel!
     
+    @IBOutlet var maleSwitch: UISwitch!
+    
+    @IBOutlet var femaleSwitch: UISwitch!
     private var newGameButtonGradientLayer: CAGradientLayer?
     
     override func viewDidLoad() {
@@ -38,6 +42,31 @@ final class HomeViewController: UIViewController {
     }
 
     
+    @IBAction func swchersAction(_ sender: UISwitch) {
+        switch sender {
+        case maleSwitch:
+            if !sender.isOn && !femaleSwitch.isOn {
+                sender.isOn = true
+            }
+        case femaleSwitch:
+            if !sender.isOn && !maleSwitch.isOn {
+                sender.isOn = true
+            }
+        default:
+            break
+        }
+        
+        switch (maleSwitch.isOn, femaleSwitch.isOn) {
+        case (true, true):
+            typeOfQestions = .mixed
+        case (true, false):
+            typeOfQestions = .male
+        case (false, true):
+            typeOfQestions = .female
+        default:
+            break
+        }
+    }
     @IBAction func sliderAction() {
         ScrollViewLabel.text = "Количество вопросов \(Int(slider.value))"
     }
@@ -53,7 +82,7 @@ final class HomeViewController: UIViewController {
     }
     
     @IBAction func newGameButtonTapped() {
-        questions = Question.getQuestion(count: Int(slider.value), theme: .female)
+        questions = Question.getQuestion(count: Int(slider.value), theme: typeOfQestions)
     }
 }
 

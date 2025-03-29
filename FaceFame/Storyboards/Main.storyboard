@@ -88,8 +88,11 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="c0W-qx-nR3">
                                         <rect key="frame" x="0.0" y="0.0" width="162.5" height="71.5"/>
                                         <subviews>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wwU-7L-BMQ">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="male" translatesAutoresizingMaskIntoConstraints="NO" id="wwU-7L-BMQ">
                                                 <rect key="frame" x="57" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="swchersAction:" destination="Y6W-OH-hqX" eventType="valueChanged" id="x9y-3J-r5S"/>
+                                                </connections>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Актёры" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Siz-iF-cea">
                                                 <rect key="frame" x="52" y="51" width="59" height="20.5"/>
@@ -102,8 +105,11 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xRe-FI-Nzz">
                                         <rect key="frame" x="172.5" y="0.0" width="162.5" height="71.5"/>
                                         <subviews>
-                                            <switch opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nXD-VH-uiD">
+                                            <switch opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" title="female" translatesAutoresizingMaskIntoConstraints="NO" id="nXD-VH-uiD">
                                                 <rect key="frame" x="57" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="swchersAction:" destination="Y6W-OH-hqX" eventType="valueChanged" id="gTV-Lg-mQK"/>
+                                                </connections>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Актрисы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSA-fY-9P9">
                                                 <rect key="frame" x="47" y="51" width="69" height="20.5"/>
@@ -140,6 +146,8 @@
                     <connections>
                         <outlet property="ScrollViewLabel" destination="Lvx-o6-bjY" id="w4I-cr-kVy"/>
                         <outlet property="avatarImageView" destination="3ty-g9-9o6" id="2xo-d8-TIu"/>
+                        <outlet property="femaleSwitch" destination="nXD-VH-uiD" id="5DP-yu-wxt"/>
+                        <outlet property="maleSwitch" destination="wwU-7L-BMQ" id="g8A-oo-g90"/>
                         <outlet property="newGameButton" destination="hnx-UO-8qj" id="gic-dk-9ea"/>
                         <outlet property="slider" destination="JtM-cW-pER" id="Tx3-Ee-WKS"/>
                         <outlet property="usernameLabel" destination="Lnx-qe-27L" id="OMZ-qF-boD"/>
@@ -544,7 +552,7 @@
         <image name="Circle logo FaceFameApp" width="794" height="801"/>
         <image name="Gleb" width="640" height="640"/>
         <image name="Image 1" width="360" height="360"/>
-        <image name="Vasiliy" width="640" height="640"/>
+        <image name="Vasiliy" width="1280" height="1280"/>
         <image name="figure.walk.arrival" catalog="system" width="126" height="128"/>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
