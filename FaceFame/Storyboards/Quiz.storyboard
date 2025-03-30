@@ -11,7 +11,7 @@
         <!--Quiz View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="Quiz1" id="Y6W-OH-hqX" customClass="QuizViewController" customModule="FaceFame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Quiz1" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="QuizViewController" customModule="FaceFame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +62,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIn-Nd-gYF" userLabel="Button help">
-                                <rect key="frame" x="121.66666666666669" y="392" width="150" height="35"/>
+                                <rect key="frame" x="121.66666666666669" y="417" width="150" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="j0U-1R-09v"/>
                                     <constraint firstAttribute="width" constant="150" id="wgK-k2-Dmf"/>
@@ -80,6 +80,7 @@
                                 <rect key="frame" x="16" y="89" width="361" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="AgV-pk-J5F"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="Hba-zH-qc9"/>
                                 </constraints>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1HG-f6-Xlw">
@@ -90,25 +91,40 @@
                                     <constraint firstAttribute="height" constant="8" id="HAH-h8-3pe"/>
                                 </constraints>
                             </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sy0-3o-Mdj">
+                                <rect key="frame" x="16" y="59" width="51" height="34.333333333333343"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.left.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="D0z-7w-1eP" kind="show" id="2DN-y0-9lD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8JW-uM-W7k" secondAttribute="trailing" constant="16" id="1PY-eb-y42"/>
-                            <constraint firstItem="TIn-Nd-gYF" firstAttribute="top" secondItem="1HG-f6-Xlw" secondAttribute="bottom" constant="25" id="3qW-rz-ts6"/>
                             <constraint firstItem="8JW-uM-W7k" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="AYf-37-0sm"/>
+                            <constraint firstItem="8JW-uM-W7k" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.293427" id="AaZ-aa-Wal"/>
                             <constraint firstItem="MjZ-rg-Dab" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Kf8-b0-mGG"/>
                             <constraint firstItem="8JW-uM-W7k" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="NlI-Se-6Xc"/>
                             <constraint firstItem="TIn-Nd-gYF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Pm6-pB-XAO"/>
+                            <constraint firstItem="TIn-Nd-gYF" firstAttribute="top" secondItem="1HG-f6-Xlw" secondAttribute="bottom" constant="50" id="RwB-Vl-vGk"/>
                             <constraint firstItem="1HG-f6-Xlw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Slp-fg-LaE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MjZ-rg-Dab" secondAttribute="trailing" constant="20" id="Wxw-oR-vHM"/>
                             <constraint firstItem="1HG-f6-Xlw" firstAttribute="top" secondItem="8JW-uM-W7k" secondAttribute="bottom" constant="20" id="enk-SW-Bpi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="MjZ-rg-Dab" secondAttribute="bottom" constant="30" id="hGB-nh-8Qt"/>
+                            <constraint firstItem="Sy0-3o-Mdj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="iPn-oa-yh6"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1HG-f6-Xlw" secondAttribute="trailing" constant="16" id="iW0-WK-Ra5"/>
                             <constraint firstItem="1HG-f6-Xlw" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="rF6-Av-J2t"/>
+                            <constraint firstItem="Sy0-3o-Mdj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="sa9-tf-Qe9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="eIe-lS-4Ev"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" style="editor" id="eIe-lS-4Ev"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ActorImageView" destination="8JW-uM-W7k" id="NO6-Bj-uYi"/>
                         <outlet property="helpButtonOutlet" destination="TIn-Nd-gYF" id="YG3-np-l36"/>
@@ -122,24 +138,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904.58015267175574" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="911" y="-250"/>
         </scene>
         <!--Quiz Resutls View Controller-->
         <scene sceneID="lE8-7t-vwG">
             <objects>
                 <viewController id="nmk-pY-81M" customClass="QuizResutlsViewController" customModule="FaceFame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CDy-wL-MHY">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VBE-MV-O2E">
-                                <rect key="frame" x="20" y="256" width="353" height="250"/>
+                                <rect key="frame" x="20" y="261" width="353" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="muZ-N3-szp"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zq0-uw-Hen" userLabel="Return Button">
-                                <rect key="frame" x="20" y="742" width="353" height="50"/>
+                                <rect key="frame" x="20" y="669" width="353" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gk3-l9-8ur"/>
@@ -148,17 +164,17 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <segue destination="D0z-7w-1eP" kind="show" id="yAv-IQ-AaR"/>
+                                    <segue destination="D0z-7w-1eP" kind="show" identifier="backToMain" id="yAv-IQ-AaR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="тест хедера" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WX3-1N-aj2">
-                                <rect key="frame" x="20" y="215.66666666666666" width="353" height="20.333333333333343"/>
+                                <rect key="frame" x="20" y="220.66666666666666" width="353" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="текст результата" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uur-8h-bZn">
-                                <rect key="frame" x="20" y="526" width="353" height="20.333333333333371"/>
+                                <rect key="frame" x="20" y="531" width="353" height="20.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -192,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="onh-gg-bvE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1693.8931297709923" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1798" y="130"/>
         </scene>
         <!--Main-->
         <scene sceneID="uOF-oe-0eY">
@@ -202,10 +218,14 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uqj-Hh-SaZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2518" y="-100"/>
+            <point key="canvasLocation" x="2407" y="-554"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2DN-y0-9lD"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrowshape.left.fill" catalog="system" width="128" height="104"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

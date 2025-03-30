@@ -26,21 +26,17 @@ final class QuizResutlsViewController: UIViewController {
         returnButtonLabel.setTitle("Попробовать снова", for: .normal)
         diescriptionLabel.textColor = .white
         headerLabel.textColor = .white
-        
         updateUI()
         resultImageView.layer.cornerRadius = resultImageView.frame.height / 4
-
     }
     
     
     private func updateUI() {
-        // Проверка, что переменные инициализированы
         guard let currentAnswers = currentAnswers, let totalAnswers = totalAnswers else { return }
-        if Double(currentAnswers) / Double(totalAnswers) >= 0.8 {
+        if Double(currentAnswers) / Double(totalAnswers) >= 0.7 {
             headerLabel.text = "Ты молодец!"
             diescriptionLabel.text = "Твой результат: \(currentAnswers) / \(totalAnswers)"
             resultImageView.image = UIImage(named: "win")
-            print("currentAnswers: \(String(describing: currentAnswers))")
         } else {
             headerLabel.text = "Мог бы и постараться"
             diescriptionLabel.text = "Твой результат: \(currentAnswers) / \(totalAnswers)"
