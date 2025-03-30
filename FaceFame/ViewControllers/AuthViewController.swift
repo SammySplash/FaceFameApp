@@ -9,20 +9,20 @@ import UIKit
 
 final class AuthViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet private var userNameTF: UITextField!
-    @IBOutlet private var passwordTF: UITextField!
+    @IBOutlet private var userNameTextField: UITextField!
+    @IBOutlet private var passwordTextField: UITextField!
     
     @IBOutlet var entryButton: UIButton!
     @IBOutlet var guestEntryButton: UIButton!
     
-    private let validUsername = "1"
-    private let validPassword = "1"
+    private let user: User = .user
     
+    // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addVerticalGradientLayer()
-        configureKeyboard()
+        configureUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -30,71 +30,71 @@ final class AuthViewController: UIViewController, UITextFieldDelegate {
         
         view.setupStartButton(entryButton)
         view.setButton(guestEntryButton)
-        userNameTF.setupRoundedTextField()
-        passwordTF.setupRoundedTextField()
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let tabBarController = segue.destination as? TabBarController
+        if let guestUser = sender as? User {
+            tabBarController?.user = guestUser
+        } else {
+            tabBarController?.user = user
+        }
+    }
+    
+    // MARK: - Overrides Methods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let greetingVC = segue.destination as? HomeViewController
-        greetingVC?.userName = userNameTF.text
-    }
-    
-    @IBAction private func loginButtonTapped() {
-        login()
-    }
-    
-    @IBAction func GuestButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "homeScreen", sender: self)
-    }
-    
-    @IBAction private func unwindToAuthViewController(_ segue: UIStoryboardSegue) {
-        userNameTF.text = ""
-        passwordTF.text = ""
-    }
-    
-    @IBAction private func forgotUserNameAction() {
-        showAlert(message: "Твое имя «1»", with: "Уупс!")
-    }
-    
-    @IBAction private func forgotPasswordAction() {
-        showAlert(
-            message: "Пожалуйста, введите корректный логин или пароль",
-            with: "Не верный логин или пароль"
-        )
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == userNameTF {
-            passwordTF.becomeFirstResponder()
-        } else if textField == passwordTF {
-            textField.resignFirstResponder()
-            login()
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        guard userNameTextField.text == user.login, passwordTextField.text == user.password else {
+            showAlert(
+                message: "Пожалуйста, введите корректные данные",
+                with: "Не верный логин или пароль") {
+                    self.passwordTextField.text = ""
+                }
+            return false
         }
         return true
     }
     
-    // MARK: - Private Methods
-    private func configureKeyboard() {
-        userNameTF.delegate = self
-        passwordTF.delegate = self
-        
-        userNameTF.returnKeyType = .next
-        passwordTF.returnKeyType = .done
+    // MARK: - IBActions
+    @IBAction func GuestButtonTapped(_ sender: UIButton) {
+        let guestUser = User(
+            login: "",
+            password: "",
+            person: Person(name: "Гость", surname: "", photo: "Image 1")
+        )
+        performSegue(withIdentifier: "homeScreen", sender: guestUser)
     }
     
-    private func login() {
-        guard userNameTF.text == validUsername && passwordTF.text == validPassword else {
-            showAlert(message: "Не верный логин или пароль", with: "Ошибка!") {
-                self.passwordTF.text = ""
-            }
-            return
+    @IBAction private func unwindToAuthViewController(_ segue: UIStoryboardSegue) {
+        userNameTextField.text = ""
+        passwordTextField.text = ""
+    }
+    
+    @IBAction func forgotRegisterData(_ sender: UIButton) {
+        showAlert(
+            message: "Твой \(sender.tag == 0 ? "логин" : "пароль"): \(sender.tag == 0 ? user.login : user.password)",
+            with: "Не забывай"
+        )
+    }
+    
+    // MARK: - Private Methods
+    private func configureUI() {
+        userNameTextField.text = user.login
+        passwordTextField.text = user.password
+        configureKeyboard()
+    }
+    
+    private func configureKeyboard() {
+        [userNameTextField, passwordTextField].forEach {
+            $0?.delegate = self
+            $0?.returnKeyType = $0 == passwordTextField ? .done : .next
+            $0?.setupRoundedTextField()
         }
-        performSegue(withIdentifier: "homeScreen", sender: self)
     }
     
     private func showAlert(message: String, with title: String, completion: (() -> Void)? = nil) {
@@ -111,7 +111,7 @@ final class AuthViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-    // MARK: - Extensions
+// MARK: - Extensions
 extension UITextField {
     func setupRoundedTextField() {
         let cornerRadius = self.frame.height / 2

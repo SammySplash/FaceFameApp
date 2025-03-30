@@ -9,6 +9,8 @@ import UIKit
 
 final class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
+    var user: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,9 +18,22 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate {
         delegate = self
         
         setupTabBarAppearance()
-        updateTabBarAppearance(for: selectedIndex)
+        transferData()
     }
     
+    // MARK: - Navigation
+    private func transferData() {
+        viewControllers?.forEach {
+            if let homeVC = $0 as? HomeViewController {
+                homeVC.user = user
+            } else if let navigationVC = $0 as? UINavigationController,
+                      let homeVC = navigationVC.topViewController as? HomeViewController {
+                homeVC.user = user
+            }
+        }
+    }
+    
+    // MARK: - Private methods
     private func setupTabBarAppearance() {
         let appearance = UITabBarAppearance()
         appearance.configureWithTransparentBackground()
@@ -26,9 +41,11 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate {
         tabBar.alpha = 0.75
         tabBar.standardAppearance = appearance
         tabBar.scrollEdgeAppearance = appearance
+        
+        updateTabBarAppearance()
     }
     
-    private func updateTabBarAppearance(for selectedIndex: Int) {
+    private func updateTabBarAppearance() {
         guard let items = tabBar.items else { return }
         
         let appearance = UITabBarAppearance()
@@ -44,20 +61,7 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate {
             }
             
             let iconColor = index == selectedIndex ? color : .gray
-            
             item.image = item.image?.withRenderingMode(.alwaysOriginal).withTintColor(iconColor)
-            
-            if index == selectedIndex {
-                appearance.stackedLayoutAppearance.selected.iconColor = color
-                appearance.stackedLayoutAppearance.selected.titleTextAttributes = [
-                    .foregroundColor: color
-                ]
-            } else {
-                appearance.stackedLayoutAppearance.normal.iconColor = .gray
-                appearance.stackedLayoutAppearance.normal.titleTextAttributes = [
-                    .foregroundColor: UIColor.gray
-                ]
-            }
         }
         
         tabBar.standardAppearance = appearance
@@ -66,7 +70,7 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     // MARK: - UITabBarControllerDelegate
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        updateTabBarAppearance(for: selectedIndex)
+        updateTabBarAppearance()
     }
 }
 
