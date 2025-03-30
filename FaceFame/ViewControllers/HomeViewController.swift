@@ -9,9 +9,9 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    var userName: String!
+    var user: User!
     var questions: [Question] = []
-    var typeOfQestions: Theme = .male
+    var typeOfQuestions: Theme = .male
     
     @IBOutlet private var avatarImageView: UIImageView!
     @IBOutlet private var usernameLabel: UILabel!
@@ -20,29 +20,32 @@ final class HomeViewController: UIViewController {
     @IBOutlet private var ScrollViewLabel: UILabel!
     
     @IBOutlet var maleSwitch: UISwitch!
-    
     @IBOutlet var femaleSwitch: UISwitch!
+    
     private var newGameButtonGradientLayer: CAGradientLayer?
     
+    // MARK: - View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        slider.minimumTrackTintColor = view.getMainColor()
-        slider.maximumTrackTintColor = .black
-        
-        ScrollViewLabel.text = "Количество вопросов \(Int(slider.value))"
-        
         view.addVerticalGradientLayer()
-        
-        if let userName = userName, !userName.isEmpty {
-            usernameLabel.text = "Welcome, \(userName)!"
-        } else {
-            usernameLabel.text = "Welcome!"
-        }
+        setupUI()
     }
-
     
-    @IBAction func swchersAction(_ sender: UISwitch) {
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        view.setupStartButton(newGameButton)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let quizVC = segue.destination as? QuizViewController
+        quizVC?.questions = questions
+    }
+    
+    // MARK: - IBActions
+    @IBAction func switchAction(_ sender: UISwitch) {
         switch sender {
         case maleSwitch:
             if !sender.isOn && !femaleSwitch.isOn {
@@ -58,31 +61,31 @@ final class HomeViewController: UIViewController {
         
         switch (maleSwitch.isOn, femaleSwitch.isOn) {
         case (true, true):
-            typeOfQestions = .mixed
+            typeOfQuestions = .mixed
         case (true, false):
-            typeOfQestions = .male
+            typeOfQuestions = .male
         case (false, true):
-            typeOfQestions = .female
+            typeOfQuestions = .female
         default:
             break
         }
     }
+    
     @IBAction func sliderAction() {
         ScrollViewLabel.text = "Количество вопросов \(Int(slider.value))"
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        view.setupStartButton(newGameButton)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           let quizVC = segue.destination as? QuizViewController
-        quizVC?.questions = questions
-    }
-    
     @IBAction func newGameButtonTapped() {
-        questions = Question.getQuestion(count: Int(slider.value), theme: typeOfQestions)
+        questions = Question.getQuestion(count: Int(slider.value), theme: typeOfQuestions)
+    }
+    
+    // MARK: - Private Methods
+    private func setupUI() {
+        slider.minimumTrackTintColor = view.getMainColor()
+        slider.maximumTrackTintColor = .black
+        ScrollViewLabel.text = "Количество вопросов \(Int(slider.value))"
+        
+        usernameLabel.text = user?.person.fullName.isEmpty == false ? "Добро пожаловать, \(user.person.fullName)!" : "Добро пожаловать, Гость!"
+        avatarImageView.image = UIImage(named: user?.person.photo ?? "Image 1")
     }
 }
-
