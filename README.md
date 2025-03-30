@@ -6,3 +6,6 @@
 - [Глеб](https://github.com/SammySplash)
 - [Александр](https://github.com/alastafew)
 - [Василий](https://github.com/Algesne77)
+
+## Design + Images
+https://disk.yandex.ru/client/disk/Project_Progress
